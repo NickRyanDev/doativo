@@ -1,7 +1,6 @@
-from django import models
+# from django import models
 from django.db import models
 from django.contrib.auth.models import User
-from choices import *
 
 class Donor(models.Model):
     name = models.CharField(max_length=150, null=False, blank=False)
@@ -27,9 +26,15 @@ class Institute(models.Model):
         self.name
 
 class Donation(models.CharField):
+    TYPE_FOOD = {
+        'FRESH': 'Alimentos Frescos',
+        'CANNED': 'Enlatados',
+        'CHILLED': 'Embutidos',
+        'GRAIN': 'Grãos'
+    }
     food = models.CharField(max_length=100, null=False, blank=False)
     amount = models.IntegerField(null=False, blank=False)
-    type_food = models.CharField(choices=TYPE_FOOD, null=False)
+    type_food = models.CharField(null=False, choices=TYPE_FOOD)
     reciver = models.CharField(Institute, blank=False, null=False)
 
     def __str__(self):
