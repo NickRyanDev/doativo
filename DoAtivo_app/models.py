@@ -1,4 +1,4 @@
-# from django import models
+from django.contrib.postgres.fields import ArrayField
 from django.db import models
 from django.contrib.auth.models import User
 
@@ -9,6 +9,7 @@ class Donor(models.Model):
     location = models.CharField(max_length=200,null=False, blank=False)
     email = models.EmailField(max_length=150, null=False, blank=False, unique=True)
     password = models.CharField(max_length=30, null=False, blank=False)
+    donations = ArrayField(models.CharField())
 
     def __str__(self):
         self.name
