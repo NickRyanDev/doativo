@@ -1,5 +1,5 @@
 from django.contrib import admin
-from models import Donor, Donation, Institute
+from .models import Donation, Donor, Institute
 
 class DonorAdmin(admin.ModelAdmin):
     list_display = ["id", "name", "email"]
@@ -10,7 +10,7 @@ class DonorAdmin(admin.ModelAdmin):
 class InstituteAdmin(admin.ModelAdmin):
     list_display = ["id", "name", "email"]
     search_fields = ["name", "email"]
-    list_filter = ["donations"]
+    list_filter = ["name"]
     list_per_page = 10
 
 class DonationAdmin(admin.ModelAdmin):
@@ -22,4 +22,4 @@ class DonationAdmin(admin.ModelAdmin):
 
 admin.site.register(Donor, DonorAdmin)
 admin.site.register(Donation, DonationAdmin)
-admin.sites.register(Institute, InstituteAdmin)
+admin.site.register(Institute, InstituteAdmin)

@@ -1,6 +1,6 @@
-TYPE_FOOD = {
-    'FRESH': 'Alimentos Frescos',
-    'CANNED': 'Enlatados',
-    'CHILLED': 'Embutidos',
-    'GRAIN': 'Grãos'
-}
+FOOD_CHOICES = (
+        ('FRESH', 'Alimentos Frescos'),
+        ('CANNED', 'Enlatados'),
+        ('CHILLED', 'Embutidos'),
+        ('GRAIN', 'Grãos')
+    ) 
