@@ -9,6 +9,8 @@
       *This version runs in python 3.10
       
 ### Second Step: Clone repository
-      Clone this repository and verify if everything is ok.
+      Clone this repository and verify if everything is ok running: 
+        $ python manage.py runserver
+     
       
       
